@@ -1,0 +1,21 @@
+.link {
+    @apply relative text-white hover:text-blue-400 transition-colors duration-200;
+  }
+  
+  .link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-[2px] bg-blue-400 transition-all duration-300;
+  }
+  
+  .link:hover::after {
+    @apply w-full;
+  }
+  
+  .active-link {
+    @apply text-blue-500;
+  }
+  
+  .active-link::after {
+    @apply w-full;
+  }
+  
