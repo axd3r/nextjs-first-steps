@@ -1,39 +1,19 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
-import "./globals.css";
+import './globals.css'
+import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+export const metadata = {
+  title: "Fernando's Home Page",
+  description: 'Generated with love by Vercel',
+}
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "First steps NextJs",
-  description: "It's my first nextjs app",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body
-        className={inter.className}
-      >
-        <div className="flex flex-col">
-          <span>RootLayaunt</span>
-        {children}
-        </div>
+      <body className={inter.className}>
+          {children}
       </body>
     </html>
-  );
+  )
 }
